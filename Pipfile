@@ -3,9 +3,17 @@ url = "https://mirrors.aliyun.com/pypi/simple/"
 verify_ssl = true
 name = "pip_conf_index_global"
 
+[[source]]
+url = "https://pypi.org/simple/"
+verify_ssl = true
+name = "pypi"
+
 [packages]
 pyqt6 = "*"
 ipykernel = "*"
+ipython = "*"
+pyqt6-fluent-widgets = {extras = ["full"], version = "*", index = "pypi"}
+pyqt6-tools = "*"
 
 [dev-packages]
 
