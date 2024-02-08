@@ -1,15 +1,17 @@
 from PyQt6.QtWidgets import QApplication, QWidget
+from ui_login import Ui_cardWin
 import sys
-from PyQt6 import uic
 
 
-class UI(QWidget):
+class Window(QWidget, Ui_cardWin):
     def __init__(self):
         super().__init__()
-        uic.loadUi("w1.ui", self)  # type:ignore
+        self.setupUi(self)
         self.show()
 
 
 app = QApplication(sys.argv)
-window = UI()
+w = Window()
+
+
 sys.exit(app.exec())
