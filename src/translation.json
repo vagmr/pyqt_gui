@@ -1,0 +1,44 @@
+{
+    "Form": {
+        "简易计算器": {
+            "en": "Simple Calculator",
+            "cn": "简易计算器"
+        },
+        "输入第一个数字": {
+            "en": "Enter the first number",
+            "cn": "输入第一个数字"
+        },
+        "输入第二个数字": {
+            "en": "Enter the second number",
+            "cn": "输入第二个数字"
+        },
+        "请选择运算方式:": {
+            "en": "Please select the operation:",
+            "cn": "请选择运算方式："
+        },
+        "加": {
+            "en": "Add",
+            "cn": "加"
+        },
+        "减": {
+            "en": "Sub",
+            "cn": "减"
+        },
+        "乘": {
+            "en": "Mul",
+            "cn": "乘"
+        },
+        "除": {
+            "en": "Div",
+            "cn": "除"
+        },
+        "输出区域：": {
+            "en": "Output area:",
+            "cn": "输出区域："
+        },
+        "开始运算": {
+            "en": "Start calculation",
+            "cn": "开始运算"
+        }
+    }
+}
