@@ -129,3 +129,5 @@ sys.exit(app.exec())
 - 11.```setMaximumWidth```：设置窗口最大宽度
 - 12.```setMinimumHeight```：设置窗口最小高度
 - 13.```setMinimumWidth```：设置窗口最小宽度
+
+[其它笔记](note.Md)
