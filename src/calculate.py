@@ -66,6 +66,7 @@ class Window(CardWidget, Ui_Form):
         self.LineEdit_2.clear()
 
     def operation(self, num1, num2):
+        print(self.sender())
         if self.RadioButton.isChecked():
             return f"{num1} + {num2} = {num1 + num2}"
         elif self.RadioButton_2.isChecked():
