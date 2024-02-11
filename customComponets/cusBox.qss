@@ -1,0 +1,18 @@
+#content {
+    font-size: 12px;
+    font-weight: bold;
+    font-family: Lato, Geneva, Tahoma, sans-serif;
+    margin-left: 5px;
+}
+
+#yesButton {
+    color: white;
+    background: #d71010;
+    border: 1px solid rgba(0, 0, 0, 0.073);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.183);
+    border-radius: 5px;
+    /* font: 14px 'Segoe UI', 'Microsoft YaHei'; */
+    padding: 5px 12px 6px 10px;
+    font: 14px 'Segoe UI', 'Microsoft YaHei';
+    outline: none;
+}
