@@ -72,7 +72,6 @@ class CusButton(QPushButton):
         import re
         new_style = re.sub(
             r'#VButton\s*\{\s*(background-color: [^;]+;)?', f'#VButton {{\nbackground-color: {color};', current_style)
-        print(new_style)
         self.setStyleSheet(new_style)
 
 

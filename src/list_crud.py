@@ -7,11 +7,11 @@
 """
 
 
-from PyQt6.QtWidgets import (QApplication, QWidget, QLCDNumber, QCompleter,
+from PyQt6.QtWidgets import (QApplication, QWidget, QLCDNumber, QCompleter, QFontComboBox,
                              QHBoxLayout, QVBoxLayout, QListWidgetItem, QLabel)
 import sys
 from PyQt6.QtCore import QTime, QTimer, Qt, QSize
-from PyQt6.QtGui import QIcon
+from PyQt6.QtGui import QIcon, QFont
 
 from qfluentwidgets import (ListWidget, PushButton, InfoBar,
                             PrimaryPushButton, FluentIcon, SearchLineEdit)
@@ -52,6 +52,8 @@ class Window(QWidget):
         # 列表设置
         self.list = ListWidget(self)
         self.list.setFixedHeight(200)
+        self.list.setItemAlignment(Qt.AlignmentFlag.AlignCenter)
+
         # 一些按钮
         init_btn = PrimaryPushButton(FluentIcon.PLAY, '初始化列表')
         init_btn.clicked.connect(self._init_list)
@@ -95,6 +97,8 @@ class Window(QWidget):
         w_layout.addLayout(w_row3)
         put_widget.setLayout(w_layout)
         add_btn.clicked.connect(lambda: put_widget.show())
+        self.fontPicker = QFontComboBox()
+        self.fontPicker.currentFontChanged.connect(self.change_font)
         # 改
         P_edit = AcrylicLineEdit()
         P_edit.setClearButtonEnabled(True)
@@ -118,6 +122,7 @@ class Window(QWidget):
         row3.addWidget(delete_btn)
         row4 = QHBoxLayout()
         row4.addWidget(add_btn)
+        row4.addWidget(self.fontPicker)
         row5 = QHBoxLayout()
         row5.addWidget(P_edit)
         row5.addWidget(put_btn)
@@ -216,6 +221,11 @@ class Window(QWidget):
             self.create_success_info('搜索成功!')
         else:
             self.create_warning_info('搜索失败!')
+
+    def change_font(self):
+        font = self.fontPicker.currentFont()
+        self.setFont(font)
+        print(self.font().family())
 
 
 app = QApplication(sys.argv)

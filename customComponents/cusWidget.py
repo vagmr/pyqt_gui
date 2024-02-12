@@ -85,6 +85,7 @@ class cusLessWidget(QWidget):
         self.titleLabel.setObjectName('title')
         self.titleLabel.setStyleSheet(title_style)
         self.close_btn = CusButton(icon='../img/close.svg')
+        self.close_btn.setColor('white')
         self.header_row.addWidget(self.titleLabel)
         self.header_row.addWidget(self.close_btn)
         self.close_btn.clicked.connect(lambda: self.close())  # type: ignore

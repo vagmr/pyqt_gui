@@ -6,7 +6,7 @@
 @版本        :1.1
 """
 from PyQt6.QtWidgets import QLabel
-from qfluentwidgets import MessageBoxBase, SubtitleLabel, PushButton
+from qfluentwidgets import MessageBoxBase, SubtitleLabel
 from os import path
 
 style = ''
@@ -40,5 +40,4 @@ class CustomWarningMessageBox(MessageBoxBase):
         self.yesButton.setStyleSheet(style)
         self.yesButton.setText('确定')
         self.cancelButton.setText('取消')
-
         self.widget.setMinimumWidth(200)
