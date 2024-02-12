@@ -13,11 +13,12 @@ import sys
 from PyQt6.QtCore import QTime, QTimer, Qt, QSize
 from PyQt6.QtGui import QIcon
 
-from qfluentwidgets import (ListWidget, PushButton, CardWidget, InfoBar,
-                            PrimaryPushButton, FluentIcon, BodyLabel, SearchLineEdit)
+from qfluentwidgets import (ListWidget, PushButton, InfoBar,
+                            PrimaryPushButton, FluentIcon, SearchLineEdit)
 from qfluentwidgets.components.material import AcrylicLineEdit
 from json import loads
-from customComponets.cusMessageBox import CustomWarningMessageBox
+from customComponents.cusMessageBox import CustomWarningMessageBox
+from customComponents.cusWidget import cusLessWidget
 
 item = {}
 style = ''
@@ -59,7 +60,7 @@ class Window(QWidget):
         delete_btn.clicked.connect(self.delete_item)  # type: ignore
         add_btn = PushButton(FluentIcon.ADD, '添加')
         # 弹出窗口设置
-        put_widget = CardWidget()
+        put_widget = cusLessWidget()
         put_widget.setGeometry(460, 210, 150, 200)
         put_widget.setFixedSize(250, 180)
         put_widget.setWindowFlags(put_widget.windowFlags(
@@ -78,7 +79,8 @@ class Window(QWidget):
         w_row1.addWidget(title)
         w_row1.addWidget(close_btn)
         w_row2 = QHBoxLayout()
-        bodylabel = BodyLabel('新的条目名')
+        bodylabel = QLabel('新的条目名')
+        bodylabel.setStyleSheet('background-color:white;')
         edit = AcrylicLineEdit()
         edit.setPlaceholderText('请输入条目名')
         w_row2.addWidget(bodylabel)

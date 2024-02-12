@@ -9,6 +9,7 @@
 
 from PyQt6.QtWidgets import QPushButton, QApplication, QWidget
 from PyQt6.QtGui import QIcon
+from typing import Union
 from PyQt6.QtCore import QSize
 from os import path
 
@@ -21,19 +22,40 @@ except FileNotFoundError:
 
 
 class CusButton(QPushButton):
-    def __init__(self, icon_path=path.join(path.dirname(__file__), 'asset/py.svg'), text='', parent=None):
+    """自定义按钮
+
+    Methods:
+        - __init__(self, icon: Union[str, QIcon] = QDir.currentPath() + '/asset/py.svg', text='', parent=None):
+            初始化按钮。
+            参数:
+                - icon: Union[str, QIcon]，按钮的图标，可以是图标的路径字符串或 QIcon 对象，默认为 py.svg 图标。
+                - text: str，按钮显示的文本，默认为空。
+                - parent: QWidget，父级窗口，默认为 None。
+        - setIconByPath(self, icon_path: str, size: tuple = (20, 20)):
+            设置按钮的图标。
+            参数:
+                - icon_path: str，图标的路径字符串。
+                - size: tuple，图标的大小，默认为 (20, 20)。
+        - setColor(self, color):
+            设置按钮的背景颜色。
+            参数:
+                - color: str，颜色字符串，例如 '#RRGGBB'。
+    """
+
+    def __init__(self, icon: Union[str, QIcon] = path.join(path.dirname(__file__), 'asset/py.svg'), text='', parent=None):
         super().__init__(parent)
-        icon = QIcon(icon_path)
+        if isinstance(icon, str):
+            icon = QIcon(icon)
         self.setIcon(icon)
         self.setIconSize(QSize(20, 20))
         self.setObjectName('VButton')
         self.setText(text)
         self.setStyleSheet(style)
 
-    def setIconByPath(self, icon_path: str):
+    def setIconByPath(self, icon_path: str, size: tuple = (20, 20)):
         icon = QIcon(icon_path)
         super().setIcon(icon)
-        self.setIconSize(QSize(20, 20))
+        self.setIconSize(QSize(*size))
 
     def setColor(self, color):
         # 获取当前的样式表

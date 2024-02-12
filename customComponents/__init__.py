@@ -3,8 +3,9 @@ vagmr-Components
 ====================
 一些简单的自定义组件
 现有组件
-    * CusButton
-    * CusMessageBox
+    * CusButton 自定义按钮
+    * CusMessageBox 自定义消息框
+    * CusLessWidget 自定义无边框窗口
 
 @说明        :自定义组件 
 @作者        :vagmr
