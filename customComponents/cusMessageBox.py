@@ -6,7 +6,7 @@
 @版本        :1.1
 """
 from PyQt6.QtWidgets import QLabel
-from qfluentwidgets import MessageBoxBase, SubtitleLabel
+from qfluentwidgets import MessageBoxBase, SubtitleLabel, ComboBox
 from os import path
 
 style = ''
@@ -34,10 +34,35 @@ class CustomWarningMessageBox(MessageBoxBase):
         # add widget to view layout
         self.viewLayout.addWidget(self.titleLabel)
         self.viewLayout.addWidget(self.label)
-
         # change the text of button
         self.yesButton.setObjectName('yesButton')
         self.yesButton.setStyleSheet(style)
         self.yesButton.setText('确定')
         self.cancelButton.setText('取消')
         self.widget.setMinimumWidth(200)
+
+
+class VInputDialog(MessageBoxBase):
+    def __init__(self, parent=None, title='默认标题', items=[], content=''):
+        super().__init__(parent)
+        self.titleLabel = SubtitleLabel(title, self)
+        self.label = QLabel(self)
+        self.item = None
+        self.label.setObjectName('content')
+        self.label.setStyleSheet(style)
+        self.label.setText(content)
+        self.combox = ComboBox(self)
+        self.combox.addItems(items)
+        # add widget to view layout
+        self.viewLayout.addWidget(self.titleLabel)
+        self.viewLayout.addWidget(self.label)
+        self.viewLayout.addWidget(self.combox)
+
+        # change the text of button
+        self.yesButton.setText('确定')
+        self.cancelButton.setText('取消')
+        self.widget.setMinimumWidth(200)
+
+    def getItem(self):
+        self.item = self.combox.currentText()
+        return self.item

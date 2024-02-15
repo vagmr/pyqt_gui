@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>800</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>VNotePad</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="verticalLayout">
+    <item>
+     <widget class="TextEdit" name="TextEdit">
+      <property name="sizePolicy">
+       <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+        <horstretch>0</horstretch>
+        <verstretch>0</verstretch>
+       </sizepolicy>
+      </property>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>800</width>
+     <height>22</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionNew"/>
+    <addaction name="actionOpen"/>
+    <addaction name="action"/>
+    <addaction name="action_3"/>
+    <addaction name="separator"/>
+    <addaction name="action_5"/>
+    <addaction name="action_6"/>
+    <addaction name="action_PDF"/>
+    <addaction name="separator"/>
+    <addaction name="action_8"/>
+   </widget>
+   <widget class="QMenu" name="menu_2">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="action_16"/>
+    <addaction name="action_14"/>
+    <addaction name="separator"/>
+    <addaction name="action_9"/>
+    <addaction name="action_10"/>
+    <addaction name="action_15"/>
+    <addaction name="action_2"/>
+   </widget>
+   <widget class="QMenu" name="menu_4">
+    <property name="title">
+     <string>格式</string>
+    </property>
+    <addaction name="action_17"/>
+    <addaction name="action_18"/>
+    <addaction name="action_19"/>
+    <addaction name="separator"/>
+    <addaction name="action_21"/>
+    <addaction name="action_22"/>
+    <addaction name="action_23"/>
+    <addaction name="separator"/>
+    <addaction name="action_25"/>
+    <addaction name="action_26"/>
+   </widget>
+   <widget class="QMenu" name="menu_5">
+    <property name="title">
+     <string>关于</string>
+    </property>
+    <addaction name="action_27"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menu_2"/>
+   <addaction name="menu_4"/>
+   <addaction name="menu_5"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <widget class="QToolBar" name="toolBar">
+   <property name="sizePolicy">
+    <sizepolicy hsizetype="Preferred" vsizetype="Fixed">
+     <horstretch>0</horstretch>
+     <verstretch>0</verstretch>
+    </sizepolicy>
+   </property>
+   <property name="windowTitle">
+    <string>toolBar</string>
+   </property>
+   <property name="allowedAreas">
+    <set>Qt::LeftToolBarArea|Qt::TopToolBarArea</set>
+   </property>
+   <attribute name="toolBarArea">
+    <enum>TopToolBarArea</enum>
+   </attribute>
+   <attribute name="toolBarBreak">
+    <bool>false</bool>
+   </attribute>
+   <addaction name="actionNew"/>
+   <addaction name="actionOpen"/>
+   <addaction name="action_3"/>
+   <addaction name="action_16"/>
+   <addaction name="action_14"/>
+   <addaction name="action_2"/>
+  </widget>
+  <action name="actionNew">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/new.svg</normaloff>:/app/img/app/new.svg</iconset>
+   </property>
+   <property name="text">
+    <string>新建</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+N</string>
+   </property>
+  </action>
+  <action name="actionOpen">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/open.svg</normaloff>:/app/img/app/open.svg</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="action_3">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/save.svg</normaloff>:/app/img/app/save.svg</iconset>
+   </property>
+   <property name="text">
+    <string>保存</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+S</string>
+   </property>
+  </action>
+  <action name="action_5">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/print.svg</normaloff>:/app/img/app/print.svg</iconset>
+   </property>
+   <property name="text">
+    <string>打印</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+P</string>
+   </property>
+  </action>
+  <action name="action_6">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/preview.svg</normaloff>:/app/img/app/preview.svg</iconset>
+   </property>
+   <property name="text">
+    <string>打印预览</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Shift+P</string>
+   </property>
+  </action>
+  <action name="action_PDF">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/pdf.svg</normaloff>:/app/img/app/pdf.svg</iconset>
+   </property>
+   <property name="text">
+    <string>导出PDF</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+  <action name="action_8">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/exit.svg</normaloff>:/app/img/app/exit.svg</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
+  <action name="action_9">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/cut.svg</normaloff>:/app/img/app/cut.svg</iconset>
+   </property>
+   <property name="text">
+    <string>剪切</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+X</string>
+   </property>
+  </action>
+  <action name="action_10">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/copy.svg</normaloff>:/app/img/app/copy.svg</iconset>
+   </property>
+   <property name="text">
+    <string>复制</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+C</string>
+   </property>
+  </action>
+  <action name="action_11">
+   <property name="text">
+    <string>恢复</string>
+   </property>
+  </action>
+  <action name="action_14">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/redo.svg</normaloff>:/app/img/app/redo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>恢复</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Y</string>
+   </property>
+  </action>
+  <action name="action_15">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/paste.svg</normaloff>:/app/img/app/paste.svg</iconset>
+   </property>
+   <property name="text">
+    <string>粘贴</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+V</string>
+   </property>
+  </action>
+  <action name="action_16">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/undo.svg</normaloff>:/app/img/app/undo.svg</iconset>
+   </property>
+   <property name="text">
+    <string>撤销</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Z</string>
+   </property>
+  </action>
+  <action name="action_17">
+   <property name="text">
+    <string>粗体</string>
+   </property>
+  </action>
+  <action name="action_18">
+   <property name="text">
+    <string>斜体</string>
+   </property>
+  </action>
+  <action name="action_19">
+   <property name="text">
+    <string>下划线</string>
+   </property>
+  </action>
+  <action name="action_21">
+   <property name="text">
+    <string>左对齐</string>
+   </property>
+  </action>
+  <action name="action_22">
+   <property name="text">
+    <string>右对齐</string>
+   </property>
+  </action>
+  <action name="action_23">
+   <property name="text">
+    <string>居中对齐</string>
+   </property>
+  </action>
+  <action name="action_25">
+   <property name="text">
+    <string>字体</string>
+   </property>
+  </action>
+  <action name="action_26">
+   <property name="text">
+    <string>颜色</string>
+   </property>
+  </action>
+  <action name="action_27">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/about.svg</normaloff>:/app/img/app/about.svg</iconset>
+   </property>
+   <property name="text">
+    <string>关于应用</string>
+   </property>
+  </action>
+  <action name="action">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/folder.svg</normaloff>:/app/img/app/folder.svg</iconset>
+   </property>
+   <property name="text">
+    <string>添加文件夹</string>
+   </property>
+  </action>
+  <action name="action_2">
+   <property name="icon">
+    <iconset resource="../image.qrc">
+     <normaloff>:/app/img/app/quit.svg</normaloff>:/app/img/app/quit.svg</iconset>
+   </property>
+   <property name="text">
+    <string>清空</string>
+   </property>
+  </action>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>TextEdit</class>
+   <extends>QTextEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources>
+  <include location="../image.qrc"/>
+ </resources>
+ <connections/>
+</ui>

@@ -5,7 +5,7 @@ from qfluentwidgets import CardWidget
 import sys
 
 
-class Window(CardWidget, Ui_Form):
+class CalculateWindow(CardWidget, Ui_Form):
     def __init__(self):
         super().__init__()
         self.setupUi(self)
@@ -81,7 +81,7 @@ class Window(CardWidget, Ui_Form):
             return "请选择运算方式" if self.is_cn() else "Please select the operation mode"
 
 
-app = QApplication(sys.argv)
-w = Window()
-
-sys.exit(app.exec())
+if __name__ == "__main__":
+    app = QApplication(sys.argv)
+    window = CalculateWindow()
+    sys.exit(app.exec())

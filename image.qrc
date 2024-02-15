@@ -1,0 +1,20 @@
+<RCC>
+  <qresource prefix="app">
+    <file>img/app/exit.svg</file>
+    <file>img/app/about.svg</file>
+    <file>img/app/copy.svg</file>
+    <file>img/app/cut.svg</file>
+    <file>img/app/folder.svg</file>
+    <file>img/app/icon.svg</file>
+    <file>img/app/new.svg</file>
+    <file>img/app/open.svg</file>
+    <file>img/app/paste.svg</file>
+    <file>img/app/pdf.svg</file>
+    <file>img/app/preview.svg</file>
+    <file>img/app/print.svg</file>
+    <file>img/app/quit.svg</file>
+    <file>img/app/redo.svg</file>
+    <file>img/app/save.svg</file>
+    <file>img/app/undo.svg</file>
+  </qresource>
+</RCC>

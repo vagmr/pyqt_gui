@@ -7,7 +7,8 @@
 """
 
 
-from PyQt6.QtWidgets import QWidget, QApplication, QLabel, QHBoxLayout
+from cProfile import label
+from PyQt6.QtWidgets import QWidget, QApplication, QLabel, QHBoxLayout, QVBoxLayout
 from PyQt6.QtCore import Qt, QPoint
 from PyQt6.QtGui import QPainter, QMouseEvent
 
@@ -47,6 +48,8 @@ class cusLessWidget(QWidget):
         self.setWindowFlags(Qt.WindowType.FramelessWindowHint)
         self.setAttribute(Qt.WidgetAttribute.WA_TranslucentBackground)
         self.setGeometry(300, 300, 400, 300)
+        self.viewLayout = QVBoxLayout(self)
+        self.viewLayout.setAlignment(Qt.AlignmentFlag.AlignTop)  # 设置布局顶部对齐
         self.drag_flag = False
         self.drag_pos = QPoint()
 
@@ -79,8 +82,7 @@ class cusLessWidget(QWidget):
             color: #000;
         }
         """
-        self.header_widget = QWidget(self)
-        self.header_row = QHBoxLayout(self.header_widget)
+        self.header_row = QHBoxLayout()
         self.titleLabel = QLabel(title)
         self.titleLabel.setObjectName('title')
         self.titleLabel.setStyleSheet(title_style)
@@ -88,12 +90,17 @@ class cusLessWidget(QWidget):
         self.close_btn.setColor('white')
         self.header_row.addWidget(self.titleLabel)
         self.header_row.addWidget(self.close_btn)
+        self.viewLayout.insertLayout(0, self.header_row)
         self.close_btn.clicked.connect(lambda: self.close())  # type: ignore
-        self.header_widget.setFixedHeight(30)
-        self.header_widget.setFixedWidth(self.width())
-        self.header_widget.move(0, 0)  # 将标题栏部件移动到窗口的左上角
-        self.close_btn.setFixedSize(20, 30)  # 设置关闭按钮的大小
-        self.header_row.setContentsMargins(10, 0, 5, 0)
+        self.close_btn.setFixedSize(20, 20)  # 设置关闭按钮的大小
+
+    def addWidget(self, widget):
+        row = QHBoxLayout()
+        row.addWidget(widget)
+        self.viewLayout.addLayout(row)
+
+    def addLayout(self, layout):
+        self.viewLayout.addLayout(layout)
 
 
 if __name__ == '__main__':

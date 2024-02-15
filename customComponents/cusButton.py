@@ -11,6 +11,7 @@ from PyQt6.QtWidgets import QPushButton, QApplication, QWidget
 from PyQt6.QtGui import QIcon
 from typing import Union
 from PyQt6.QtCore import QSize
+from qfluentwidgets import PushButton
 from os import path
 
 style = ''
@@ -50,10 +51,14 @@ class CusButton(QPushButton):
         self.setIconSize(QSize(20, 20))
         self.setObjectName('VButton')
         self.setText(text)
+        self.setMaximumSize(180, 45)
         self.setStyleSheet(style)
 
-    def setIconByPath(self, icon_path: str, size: tuple = (20, 20)):
-        icon = QIcon(icon_path)
+    def setIcon(self, icon: Union[QIcon, str], size: tuple = (20, 20)):
+        self.setProperty('hasIcon', icon is not None)
+        self.setStyleSheet(style)
+        if isinstance(icon, str):
+            icon = QIcon(icon)
         super().setIcon(icon)
         self.setIconSize(QSize(*size))
 
