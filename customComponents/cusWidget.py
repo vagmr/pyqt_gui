@@ -7,7 +7,7 @@
 """
 
 
-from cProfile import label
+from qfluentwidgets import InfoBar, InfoBarIcon, InfoBarPosition
 from PyQt6.QtWidgets import QWidget, QApplication, QLabel, QHBoxLayout, QVBoxLayout
 from PyQt6.QtCore import Qt, QPoint
 from PyQt6.QtGui import QPainter, QMouseEvent
@@ -93,6 +93,18 @@ class cusLessWidget(QWidget):
         self.viewLayout.insertLayout(0, self.header_row)
         self.close_btn.clicked.connect(lambda: self.close())  # type: ignore
         self.close_btn.setFixedSize(20, 20)  # 设置关闭按钮的大小
+
+    def show_info(self, content='', title='', parent=None, success=True):
+        self.info = InfoBar.new(
+            icon=InfoBarIcon.SUCCESS if success else InfoBarIcon.ERROR,
+            title=title,
+            content=content,
+            isClosable=True,
+            duration=2000 if success else -1,
+            parent=parent or self,
+            position=InfoBarPosition.BOTTOM
+        )
+        self.info.show()
 
     def addWidget(self, widget):
         row = QHBoxLayout()
