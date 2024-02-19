@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>password_manage</class>
+ <widget class="QWidget" name="password_manage">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>600</width>
+    <height>400</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>密码管理器</string>
+  </property>
+  <layout class="QVBoxLayout" name="verticalLayout">
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_2">
+     <item>
+      <widget class="ImageLabel" name="ImageLabel"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="HorizontalSeparator" name="HorizontalSeparator_2"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel">
+       <property name="text">
+        <string>网站名/标记</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="LineEdit" name="LineEdit"/>
+     </item>
+     <item>
+      <widget class="ToolButton" name="ToolButton"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_3">
+     <item>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel_2">
+       <property name="text">
+        <string>用户名/邮箱</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="LineEdit" name="LineEdit_2"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_4">
+     <item>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel_4">
+       <property name="text">
+        <string>网址</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="LineEdit" name="LineEdit_4"/>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_5">
+     <item>
+      <widget class="StrongBodyLabel" name="StrongBodyLabel_3">
+       <property name="text">
+        <string>密码</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="LineEdit" name="LineEdit_3"/>
+     </item>
+     <item>
+      <widget class="PushButton" name="PushButton">
+       <property name="text">
+        <string>生成密码</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item>
+    <widget class="HorizontalSeparator" name="HorizontalSeparator"/>
+   </item>
+   <item>
+    <layout class="QHBoxLayout" name="horizontalLayout_6">
+     <item>
+      <widget class="PrimaryPushButton" name="save_btn">
+       <property name="text">
+        <string>保存密码</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="PrimaryPushButton" name="show_btn">
+       <property name="text">
+        <string>展示保存项</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+  </layout>
+ </widget>
+ <customwidgets>
+  <customwidget>
+   <class>PushButton</class>
+   <extends>QPushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>PrimaryPushButton</class>
+   <extends>PushButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ToolButton</class>
+   <extends>QToolButton</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>HorizontalSeparator</class>
+   <extends>QWidget</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>StrongBodyLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>ImageLabel</class>
+   <extends>QLabel</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+  <customwidget>
+   <class>LineEdit</class>
+   <extends>QLineEdit</extends>
+   <header>qfluentwidgets</header>
+  </customwidget>
+ </customwidgets>
+ <resources/>
+ <connections/>
+</ui>
