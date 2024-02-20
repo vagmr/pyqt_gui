@@ -48,11 +48,11 @@ if path.exists(path.join(config_file_save_path, './history')):
 
 
 class Window(QWidget, Ui_changeTool):
-    def __init__(self):
+    def __init__(self, parent=None):
         """
         构造函数用于初始化类，包括设置用户界面、窗口属性、信号与槽的连接以及小部件配置。
         """
-        super().__init__()
+        super().__init__(parent=parent)
         # self.background_label = AcrylicLabel(
         #     blurRadius=25, tintColor=QColor(255, 255, 255, 62), parent=self)
         # self.background_label.setImage("../img/author.jpg")

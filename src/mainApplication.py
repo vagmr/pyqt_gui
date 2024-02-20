@@ -1,23 +1,38 @@
+from PyQt6.QtGui import QIcon
 from PyQt6.QtWidgets import QApplication
-from qfluentwidgets import SplitFluentWindow, FluentIcon
+from qfluentwidgets import SplitFluentWindow, FluentIcon, NavigationItemPosition
 from VChange import Window
 from VPsw import Window2
+from settings import SettingInterface
+from sys import exit, argv
 
 
 class MainWindow(SplitFluentWindow):
     def __init__(self):
         super().__init__()
         self.window_interface = Window2(self)
+        self.navigationInterface.setAcrylicEnabled(True)
+        self.setting = SettingInterface(self)
+        self.change_tool = Window(self)
+        self.init_window()
+        self.init_navigation()
+        self.show()
 
-        self.addSubInterface(Window(), icon=FluentIcon.CHAT, text="视频转换")
+    def init_navigation(self):
+        self.addSubInterface(
+            self.change_tool, icon=FluentIcon.CHAT, text="视频转换")
         self.addSubInterface(
             self.window_interface, icon=FluentIcon.PLAY_SOLID, text="密码管理")
-        self.setFixedSize(660, 400)
-        self.navigationInterface.setAcrylicEnabled(True)
-        self.show()
+        self.addSubInterface(self.setting, icon=FluentIcon.SETTING,
+                             text="设置", position=NavigationItemPosition.BOTTOM)
+
+    def init_window(self):
+        self.setFixedSize(665, 400)
+        self.setWindowTitle("VApplication")
+        self.setWindowIcon(QIcon("./assets/1.ico"))
 
 
 if __name__ == "__main__":
-    app = QApplication([])
+    app = QApplication(argv)
     window = MainWindow()
-    app.exec()
+    exit(app.exec())

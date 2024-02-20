@@ -16,6 +16,7 @@ class Ui_changeTool(object):
         self.verticalLayout = QtWidgets.QVBoxLayout(changeTool)
         self.verticalLayout.setObjectName("verticalLayout")
         self.TitleLabel = TitleLabel(parent=changeTool)
+        self.TitleLabel.setAlignment(QtCore.Qt.AlignmentFlag.AlignLeading|QtCore.Qt.AlignmentFlag.AlignLeft|QtCore.Qt.AlignmentFlag.AlignVCenter)
         self.TitleLabel.setObjectName("TitleLabel")
         self.verticalLayout.addWidget(self.TitleLabel)
         self.horizontalLayout = QtWidgets.QHBoxLayout()
