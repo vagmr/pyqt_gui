@@ -16,7 +16,7 @@ from py7zr import SevenZipFile
 
 def download_ffmpeg():
     print("检测到ffmpeg依赖缺失，准备下载...")
-    url = "https://i-550.wwentua.com:446/02181800164042855bb/2024/02/18/3b615d11f2c359b8d512e8f01d2a7055.7z?st=P1Vrz48yGv0UwJR008hSYg&e=1708255892&b=AjZeOAZrAHUDMwQ1AH0BMwN4CmcFKlBnB3kIYFElBXQIP10zVSFXO1ltBT8LKABbVGMKIwxkVjwJPgopBTVRKQ_c_c&fi=164042855&pid=61-242-135-41&up=2&mp=0&co=0"
+    url = "https://i-020.wwentua.com:446/02202300164417410bb/2024/02/20/8819d16ebdc07bf36f34ccbef58c0933.7z?st=xjNxRvj517R-xZDu-vbl6w&e=1708444450&b=CT0MalQ5ViNRYVFgA30DMFV6&fi=164417410&pid=18-141-190-145&up=2&mp=0&co=0"
     ffmpeg_dir = "dependence"
     from VChange import config_file_save_path
     ffmpeg_archive = path.join(config_file_save_path, ffmpeg_dir)
@@ -49,6 +49,7 @@ def download_ffmpeg():
     print("开始解压ffmpeg...")
     with SevenZipFile(file_path, mode="r") as z:
         z.extractall(ffmpeg_archive)
+    print("解压成功")
 
 
 def is_ffmpeg_installed():

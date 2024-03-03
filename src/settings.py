@@ -14,6 +14,7 @@ AUTHOR = "vagmr"
 MONTH = now.month
 DAY = now.day
 VERSION = "0.0.1"
+userInfo = None
 
 
 class Config(QConfig):
@@ -68,6 +69,15 @@ class SettingInterface(ScrollArea, Ui_Form):
             content=f"此应用由{AUTHOR}开发\n@{YEAR}-{MONTH}-{DAY}\n版本：{VERSION}",
             parent=self.aboutGroup
         )
+        self.loginGroup = SettingCardGroup("登录", self.scrollWidget)
+        self.userInfo = PrimaryPushSettingCard(
+            title="跳转至登录页",
+            icon=FIF.CARE_RIGHT_SOLID,
+            text="登录(可选项)",
+            content="登录后可将密码以加密形式保存至服务器",
+            parent=self.loginGroup
+        )
+
         self.__init_widget()
 
     def __init_widget(self):
@@ -88,15 +98,20 @@ class SettingInterface(ScrollArea, Ui_Form):
         self.aboutGroup.addSettingCard(self.help_card)
         self.aboutGroup.addSettingCard(self.about)
 
+        self.loginGroup.addSettingCard(self.userInfo)
+
         self.expandLayout.addWidget(self.settingLabel)
         self.expandLayout.addWidget(self.musicInThisPCGroup)
         self.expandLayout.addWidget(self.aboutGroup)
+        self.expandLayout.addWidget(self.loginGroup)
         self.scrollWidget.setLayout(self.expandLayout)
 
     def _init_connect(self):
         self.about.clicked.connect(
             lambda: QDesktopServices.openUrl
             (QUrl('https://github.com/vagmr')))  # type: ignore
+        global userInfo
+        userInfo = self.userInfo
 
 
 if __name__ == "__main__":
