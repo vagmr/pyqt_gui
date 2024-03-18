@@ -1,6 +1,8 @@
 # python Gui Dev Note(pyqt开发笔记)
 
 [learn pyqt]: # README.md
+![image](https://github.com/vagmr/pyqt_gui/assets/77198027/4a9d9d2c-9f6c-4294-9732-06ebe912519c)
+
 
 ## 1.初识
 
