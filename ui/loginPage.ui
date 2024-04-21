@@ -41,6 +41,9 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
@@ -52,9 +55,9 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout_2">
        <item>
-        <widget class="StrongBodyLabel" name="StrongBodyLabel_2">
+        <widget class="StrongBodyLabel" name="StrongBodyLabel">
          <property name="text">
-          <string>密码</string>
+          <string>账户</string>
          </property>
         </widget>
        </item>
@@ -82,9 +85,9 @@
      <item>
       <layout class="QHBoxLayout" name="horizontalLayout">
        <item>
-        <widget class="StrongBodyLabel" name="StrongBodyLabel">
+        <widget class="StrongBodyLabel" name="StrongBodyLabel_2">
          <property name="text">
-          <string>账户</string>
+          <string>密码</string>
          </property>
         </widget>
        </item>
@@ -114,10 +117,13 @@
        <property name="orientation">
         <enum>Qt::Vertical</enum>
        </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
        <property name="sizeHint" stdset="0">
         <size>
          <width>20</width>
-         <height>40</height>
+         <height>80</height>
         </size>
        </property>
       </spacer>
@@ -142,6 +148,22 @@
         </widget>
        </item>
       </layout>
+     </item>
+     <item>
+      <spacer name="verticalSpacer_3">
+       <property name="orientation">
+        <enum>Qt::Vertical</enum>
+       </property>
+       <property name="sizeType">
+        <enum>QSizePolicy::Fixed</enum>
+       </property>
+       <property name="sizeHint" stdset="0">
+        <size>
+         <width>20</width>
+         <height>40</height>
+        </size>
+       </property>
+      </spacer>
      </item>
     </layout>
    </item>

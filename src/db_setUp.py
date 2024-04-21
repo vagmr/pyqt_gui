@@ -12,8 +12,14 @@ class Window(QWidget, Ui_ui_Db):
         self.HostEdit.setText('127.0.0.1')
         self.usernameEdit.setText('root')
         self.DbNameEdit.setPlaceholderText('请输入要创建的数据库名称')
-        self.createBtn.clicked.connect(self.create_database)
+        self.data_base = None
+        self.signalToSlot()
         self.show()
+
+    def signalToSlot(self):
+        #  创建数据库
+        self.createBtn.clicked.connect(self.create_database)
+        self.conBtn.clicked.connect(self.connect_database)
 
     def create_database(self):
         try:
@@ -31,7 +37,20 @@ class Window(QWidget, Ui_ui_Db):
             self.PlainTextEdit.setPlainText(f'数据库连接失败: {e}')
 
     def connect_database(self):
-        pass
+        self.PlainTextEdit.appendPlainText("正在连接数据库...")
+        try:
+            my_db = ms.connect(
+                host=self.HostEdit.text(),
+                user=self.usernameEdit.text(),
+                password=self.passwordEdit.text(),
+                database=self.DbNameEdit.text()
+            )
+            self.data_base = my_db
+            self.PlainTextEdit.appendPlainText(
+                f'数据库 {self.DbNameEdit.text()} 连接成功')
+        except ms.Error as e:
+            self.PlainTextEdit.setPlainText(
+                f'数据库{self.DbNameEdit.text()}连接失败: {e}')
 
 
 app = QApplication([])

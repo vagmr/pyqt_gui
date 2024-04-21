@@ -14,6 +14,7 @@ ipykernel = "*"
 ipython = "*"
 pyqt6-fluent-widgets = {extras = ["full"], version = "*", index = "pypi"}
 pyqt6-tools = "*"
+pyside = "*"
 
 [dev-packages]
 
