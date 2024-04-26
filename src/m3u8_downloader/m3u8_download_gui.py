@@ -137,7 +137,7 @@ class M3u8DownloadGui(QWidget, Ui_MainUi):
             return
         print("开始下载")
         exc_path = path.join(application_path, 'lib/m3u8Lib.exe')
-        download_cmd = f" {exc_path} {self.download_url}   --save-dir {self.output_path} --save-name {self.output_name}  --thread-count {self.download_threads}"
+        download_cmd = f' {exc_path} "{self.download_url}"   --save-dir {self.output_path} --save-name {self.output_name}  --thread-count {self.download_threads}'
         try:
             subprocess.run(download_cmd, shell=True, check=True)
             self.show_info(
